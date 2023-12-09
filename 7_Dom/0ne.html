@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom-learning</title>
+    <style>
+        .bg-black {
+            background-color: #212121;
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="bg-black">
+    <div>
+        <h1 id="title" class="heading">Dom-learning By Arnab <span style="display: none;">text</span></h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat veritatis quos quis? Ea soluta nobis velit!
+            Odit suscipit aliquam quaerat.</p>
+        <h2 class="heading-list">Lorem ipsum dolor sit amet.</h2>
+        <h2 class="heading-list">Lorem ipsum dolor sit amet.</h2>
+
+        <input type="password" name="" id="">
+
+        <ul>
+            <li>one</li>
+            <li>two</li>
+            <li>three</li>
+        </ul>
+    </div>
+    <script>
+    // this will set new class doing the 'setAttribute'
+        /*
+        title.style.backgroundColor = 'green';
+        title.style.border = '2px solid white'; 
+        title.style.borderRadius = '15px';
+        */
+
+    // content out methods => innerHTML, innerText, textContent
+        /*
+        title.innerHTML // it will show all the text and the attribute(html-value, css-value)
+        title.textContent //it will show all value if the value was too hidden 
+        title.innerText //it will only show the value are not hidden 
+        */
+
+    // select element
+        /*
+        document.querySelector('h1')
+        document.querySelector('.heading')
+        document.querySelector('#title')
+        ocument.querySelector('input[type ="password"]')
+        */
+
+    // querySelector => select only the first element
+        /*
+        const myUl = document.querySelector('ul'); 
+        const turnGreen = myUl.querySelector('li');
+        turnGreen.style.backgroundColor = 'green';
+        */
+
+    // querySelectorall => it select all the element in the fromat of NodeList
+        const tempLiList = document.querySelectorAll('li')
+        // tempLiList.style.color = 'green'; it will through an error because it didnt work like 'querySelector'
+        // tempLiList[0].style.color = 'green';
+        tempLiList.forEach((li) => {
+            return li.style.color = 'green'
+        })
+
+    // How to convert HTNLCollection into an array 
+        const tempHeadingList = document.getElementsByClassName('heading-list')
+        const myConvertArray = Array.from(tempHeadingList)  // convert HTNLCollection into an array
+        myConvertArray.forEach((h) => {
+            return h.style.backgroundColor = 'blue'
+        })
+    </script>
+</body>
+
+</html>
