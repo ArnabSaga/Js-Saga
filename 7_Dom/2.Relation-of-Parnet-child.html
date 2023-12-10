@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Element in Dom</title>
+    <style>
+        .bg-black {
+            background-color: #212121;
+            color: white;
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <div class="week">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+
+    <script>
+        // first select by 'querySeletor-methods' the parent's class after doing so now select the child class by 'query'SelectorALl-methods 
+            const parentElement = document.querySelector('.week');
+        /*
+            console.log(parentElement);
+            console.log(parentElement.children); 
+            */
+        /*
+        // it(parentElement.children) will show us the 'HTMlCollection', because this a 'HTMLCollection' we can control it just like array methods, but we didnt get all the main functional method in it. 
+
+            console.log(parentElement.children[1].innerHTML);
+            for (let i = 0; i < parentElement.children.length; i++) {
+                console.log(` ${parentElement.children[i].innerHTML}`);
+            }
+        */
+        
+       // easily way to traver's
+            // parentElement.children[0].style.backgroundColor = 'green';
+            // console.log(parentElement.firstElementChild);
+            // console.log(parentElement.lastChild);
+
+            // const dayOne = document.querySelector('.day')
+            // console.log(dayOne);
+            // console.log(dayOne.nextElementSibling);
+            // console.log(dayOne.parentElement);
+
+    </script>
+</body>
+</html>

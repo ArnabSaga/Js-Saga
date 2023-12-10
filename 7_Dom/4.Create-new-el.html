@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create new Element by dom</title>
+    <style>
+        body {
+            background-color: #212121;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    
+    <script>
+        /*
+            const createDiv = document.createElement('div');
+            createDiv.className = 'Main' //to give a class of the element
+            createDiv.id = Math.floor(Math.random() * 10) + 1 //to give an id of the element
+            createDiv.setAttribute('title', 'generated title')
+            createDiv.style.backgroundColor = 'green'
+            createDiv.style.color = 'white'
+            console.log(createDiv);
+            // createDiv.innerText = 'hello web' - the pro didn't like this method the suggest because 'it over write things' 
+            const addText = document.createTextNode('hello web')
+            createDiv.appendChild(addText)
+            
+            // in this state the div is store in the memorie, it didn't display in the web-page so do that
+            document.body.appendChild(createDiv)
+        */
+
+        // _____ TRY TO DO ONE MORE WITH FUNCTION, LOOP, ARRAY___
+        function CreateH1() {
+            const h1Container = document.createElement('h1');
+            h1Container.className = 'heading'
+            h1Container.style.color = 'blue'
+            const h1Text = document.createTextNode('heading');
+            h1Container.appendChild(h1Text)
+
+            document.body.appendChild(h1Container)
+            return h1Container; //Return the created element
+        }
+        for (let i = 0; i < 5; i++) {
+            const constainer = CreateH1(); // print 5 time by doing loop
+        }
+
+
+    </script>
+</body>
+</html>
