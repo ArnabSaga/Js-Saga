@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove the element form the dom</title>
+    <style>
+        body{
+            background-color: #212121;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <ul class="language">
+        <li>JavaSript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const ul = document.querySelector('.language');
+        const newLi = document.createElement('li');
+        const newLiText = document.createTextNode(`${langName}`);
+        newLi.appendChild(newLiText);
+        ul.appendChild(newLi);
+        console.log(ul);
+    }
+    addLanguage('Python');
+    addLanguage('TypeScript');
+
+    // optimaise_way
+    function addOptiLanguage(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName));
+        document.querySelector('.language').appendChild(li);
+    }
+    addOptiLanguage('GoLang');
+
+    // Edit_li
+    function editSecondLi(liName){
+        const secondLang = document.querySelector('li:nth-child(2)');
+        const newLi = document.createElement('li');
+        newLi.appendChild(document.createTextNode(liName));
+        secondLang.replaceWith(newLi);
+    }
+    editSecondLi('Mojo');
+
+        const firstLi = document.querySelector('li:first-child');
+        firstLi.outerHTML = '<li>TypeScript</li>'
+
+    // Remove
+    const lastlang = document.querySelector('li:last-child')
+    lastlang.remove()
+
+</script>
+</html>
