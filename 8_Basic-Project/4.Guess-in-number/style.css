@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+.main {
+    height: 100%;
+    width: 100%;
+    background-color: #212121;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h2 {
+    font-size: 2.5em;
+}
+
+.container {
+    background-color: #4a4a4a;
+    width: 25em;
+    height: 35em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+p {
+    font-size: 1em;
+    text-align: center;
+    margin: 1em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+label {
+    font-size: 3em;
+    margin-bottom: .5em;
+}
+
+input {
+    width: 20em;
+    height: 2.5em;
+    margin-bottom: .5em;
+}
+
+button {
+    padding: 1em 2em;
+    background-color: #212121;
+    color: white;
+    border-radius: 10px;
+    transition: all ease .5s;
+}
+
+button:hover {
+    /* background-color: #4a4a4a; */
+    box-shadow: 5px 5px 5px white;
+}
+
+button::after {
+    transition: all ease .5s;
+}
+
+.guesses {
+    background-color: #212121;
+    padding: 5px;
+}
