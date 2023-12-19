@@ -2,10 +2,10 @@ let randomNumber = parseInt(Math.random() * 100 + 1);
 
 const Submit = document.querySelector('#subt');
 const useInput = document.querySelector('#guessField');
+const startOver = document.querySelector('.resultParas'); 
 const guessSlot = document.querySelector('.guesses');
 const remaining = document.querySelector('.lastResult');
 const lowOrHigh = document.querySelector('.lowOrHi');
-const startOver = document.querySelector('.resultParas');
 
 const p = document.createElement('p')
 
