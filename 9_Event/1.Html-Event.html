@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html Event</title>
+    <style>
+        body{
+            background-color: #414141; 
+            color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop"
+                    src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt="photoshop"></li>
+            <li><img width="200px" id="japan"
+                    src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="river"
+                    src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="owl"
+                    src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="prayer"
+                    src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    /* this will also create some problem ('onclick' give us some of feature)
+
+    document.getElementById('owl').onclick = () =>{
+        alert('owl')
+    }
+    */
+
+    // ---------------------------------- LEARN ---------------------------------- 
+    /* 
+    Event sholud Learn => 
+        1. type(keyBorad, mouse), 
+        2. timestamp(it will tell us what time user clicked), 
+        3. preventDefault(Change the defoult beheviours), 
+        4. stopPropagation(it will permit to upper state)
+        5. traget(it will traget that element that u want to select)
+        5i.traget.pzrentNode(it will select it's parent element )  
+        6. toElement,
+        7. srcElement,
+        8. currentTarget
+        9. clientX, clientY, screenX, screenY
+        10.altkey, ctrlkey, shiftkey, keyCode 
+    */
+    // ---------------------------------- IMPORTANT ---------------------------------- 
+
+    // addEventListener has 3 parameter => 1. string, 2.Function, 3.ture/false
+
+    // Event bubbling(normal used) => Evnet bubbling is basicly bubbling up, what does bubble do, it go DOWN to UP.so 1st 'owl clicked' & 2nd 'Clicked inside the ul'
+
+    // Capturing mode(true)(rearly user) => it will go UP to DOWN. so 1st 'Clicked inside the ul' & 2nd 'owl clicked'
+
+    /*
+    const image = document.querySelector('#images')
+    image.addEventListener('click', (e)=>{
+        console.log('clicked inside the ul');
+    },false)
+
+
+    const owl = document.querySelector('#owl')
+    owl.addEventListener('click', (e)=>{
+        console.log('Owl clicked');
+        e.stopPropagation(); // ai 'stopPropagation' upor er tai jaite dibe na 
+    },false)
+    
+
+    const Google = document.querySelector('#google');
+    Google.addEventListener('click', (e)=>{
+        e.preventDefault();
+        e.stopPropagation();
+        console.log('Google clickrd');
+    })
+    */
+
+    // ---------------------------------- goal ---------------------------------- 
+    const images = document.querySelector('#images');
+    images.addEventListener('click', (e)=>{
+        console.log(e.target.tagName);
+        if(e.target.tagName === 'IMG'){
+            console.log(e.target.id);
+            let removeLi = e.target.parentNode;
+            removeLi.remove(); //new methods 
+        }
+        // removeLi.parentNode.removeChild(removeLi) (old methods)
+    },false)
+
+
+</script>
+</html>
