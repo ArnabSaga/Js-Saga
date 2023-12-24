@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #212121;
+            color: azure;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Main">
+        <h1>Hello World</h1>
+        <button id="btn">Click Me</button>
+    </div>
+</body>
+<script>
+    const btn = document.querySelector('#btn')
+    btn.addEventListener('click', ()=> {
+        setTimeout(function(){
+            // the function will only run 2s later for one time 
+            console.log(e.target.id);
+        },2000)
+        
+    })
+</script>
+</html>

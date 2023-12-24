@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlimited Background Color website</title>
+    <style>
+        body {
+            background-color: #313131;
+            color: aliceblue;
+        }
+        button {
+            padding: 1em 2em;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <h1>Change the Background color with Unlimited color</h1>
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+    </div>
+</body>
+<script>
+    const startBtn = document.querySelector('#start');
+    const stopBtn = document.querySelector('#stop');
+
+    const randomColor = function(){
+        const hex ='0123456789ABCDEF';
+        let color = '#';
+        for(let i = 0; i < 6; i++ ){
+            color += hex[Math.floor(Math.random() * 16)];
+        }
+        return color; 
+    };
+
+    let intervalId;
+    function startChangingColor(){
+        function changeBgColor() {
+            document.body.style.backgroundColor = randomColor() 
+        }
+        if(!intervalId){ // double clicked problem solve with this condition
+            intervalId = setInterval(changeBgColor, 1000);
+        }
+    };
+
+    function stopChangingColor(){
+        clearInterval(intervalId);
+        intervalId = null;
+    };
+
+    startBtn.addEventListener('click', startChangingColor);
+    stopBtn.addEventListener('click', stopChangingColor);
+</script>
+
+</html>

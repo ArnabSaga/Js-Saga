@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop the setTimeout Method</title>
+    <style>
+        body {
+            background-color: #212121;
+            color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h1>Async JS Saga</h1>
+        <button id="stop">Stop</button>
+    </div>
+</body>
+<script>
+    const btn = document.querySelector('#stop');
+    const heading = document.querySelector('h1')
+
+    let changeText = function(){
+        heading.innerHTML = 'Best Js Serious';
+    }
+
+    const changeMe = setTimeout(changeText, 2000);
+
+    btn.addEventListener('click', ()=>{
+        console.log('STOPPED');
+        heading.innerHTML = 'Async Js Saga'
+        clearTimeout(changeMe); // clearTimeout basically it stop the work of setTimeout
+    })
+</script>
+</html>

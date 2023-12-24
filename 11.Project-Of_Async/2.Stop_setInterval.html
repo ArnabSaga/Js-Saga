@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop the setInterval</title>
+    <style>
+        body {
+            background-color: #212121;
+            color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h1>Async JS Saga's Project</h1>
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+    </div>
+</body>
+
+<script>
+    const startBtn = document.querySelector('#start');
+    const stopBtn = document.querySelector('#stop');
+    let intervalId;
+
+    startBtn.addEventListener('click', ()=> {
+        const sayDate = function(str){
+        console.log(str, Date.now());
+    }
+    intervalId = setInterval(sayDate, 1000, 'hello')
+})
+
+    stopBtn.addEventListener('click', ()=> {
+        clearInterval(intervalId);
+    })
+</script>
+
+</html>

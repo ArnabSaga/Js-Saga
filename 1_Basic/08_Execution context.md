@@ -10,6 +10,7 @@ Q1.What is Js Execution Context and how it execute ?
 
 Q2.What is Js Execution Context Example ?
 => 
+```  javascript
     let val1 = 10;
     let val2 = 5;
     function addNum(num1, num2){
@@ -18,7 +19,7 @@ Q2.What is Js Execution Context Example ?
     }
     let result1 = addNum(val1, val2);
     let result1 = addNum(10, 2);
-
+```
     step:
         1. At first come to create 'Global Execution Context'
         2. Then create 'Memory Creation Phase' 
